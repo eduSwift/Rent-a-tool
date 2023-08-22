@@ -5,27 +5,6 @@
 
 }
 
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 160px;
-  display: flex;
-  justify-content: center;
-  align-items: right;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 20;
-  padding:200;
-}
-
-.card-category img {
-  width: 100px;
-}
-
 h1 {
   color: black;
   display: block;
@@ -37,7 +16,7 @@ h1 {
   margin-inline-end: 0px;
   font-weight: bold;
   text-decoration: none;
-  align: center;
+  text-align: center;
 }
 
 
@@ -52,7 +31,7 @@ h2 {
   margin-inline-end: 0px;
   font-weight: bold;
   text-decoration: none;
-  align: left;
+  text-align: left;
 }
 
 h2 {
@@ -66,7 +45,7 @@ h2 {
   margin-inline-end: 0px;
   font-weight: bold;
   text-decoration: none;
-  align: center;
+  text-align: center;
 }
 
 
