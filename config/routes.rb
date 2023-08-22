@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
- 
+  get "pages/home", to: "pages#home"
   resources :tools do
     resources :bookings, only: %i[new create show destroy]
   end

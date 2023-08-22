@@ -1,2 +1,29 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<h2>Hello <%= @user.first_name %></h2>
+
+
+<h3>Your infos</h3>
+<p>First name: <%= @user.first_name %> Last name: <%= @user.last_name %></p>
+<p>Address <%= @user.address %></p>
+<p>Password: <%= @user.password %></p>
+<div data-controller="toggle" class="mt-5">
+  <button class="btn btn-outline-primary" data-action="click->toggle#edit">Edit my infos</button>
+  <div data-toggle-target="profileEdit" class="d-none">
+  <%= render "devise/registrations/edit", resource_name: current_user, resource: current_user %>
+  </div>
+</div>
+
+
+<h3>Your bookings</h3>
+<h4>bookings of your tool</h4>
+<h4>Your upcoming bookings of other people's tools</h4>
+
+<h3>Your tools</h3>
+<div data-controller="toggle" class="mt-5">
+  <button class="btn btn-outline-primary" data-action="click->toggle#fire">Add a new tool</button>
+  <div data-toggle-target="togglableElement" class="d-none">
+  <%= render "tools/form", tool: @tool %>
+  </div>
+</div>
