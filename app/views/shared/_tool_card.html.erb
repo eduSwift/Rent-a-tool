@@ -7,12 +7,11 @@
 </div>
 -->
 
-  <div class="card-trip-infos" >
-    <p><strong><%= tool.description %></strong></p>
-    <h2>Owner: <%= tool.user.first_name %></h2>
-    <h2>Availability: <%= tool.availability == true ? "Available" : "Unavailable"%></h2>
-    <h2>Cost: <%= tool.price %></h2>
-    <h2>Size: <%= tool.size %></h2>
-    <h2>Category: <%= tool.category %></h2>
-  </div>
+<div class="card-trip-infos" >
+  <p><strong><%= tool.description %></strong></p>
+  <h2>Owner: <%= tool.user.first_name %></h2>
+  <h2>Availability: <%= tool.availability == true ? "Available" : "Unavailable"%></h2>
+  <h2>Cost: <%= tool.price %></h2>
+  <h2>Size: <%= tool.size %></h2>
+  <h2>Category: <%= tool.category %></h2>
 </div>
