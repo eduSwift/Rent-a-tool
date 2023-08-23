@@ -1,4 +1,4 @@
-Book your <%= tool.name %>
+<div>Book your <%= tool.name %>
 
 <%= simple_form_for([tool, @booking], data: {
                               insert_in_list_target: "form",
@@ -19,3 +19,4 @@ Book your <%= tool.name %>
     <%= f.button :submit, class: "btn btn-primary" %>
  </div>
 <% end %>
+</div>
