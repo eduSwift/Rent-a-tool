@@ -7,10 +7,7 @@
 </div>
 -->
 
-<div class="card-product">
-  <div class="card-product-infos" >
-    <h2><%= tool.name %></h2>
-    <img src="<%= tool.image %>" alt="">
+  <div class="card-trip-infos" >
     <p><strong><%= tool.description %></strong></p>
     <h2>Owner: <%= tool.user.first_name %></h2>
     <h2>Availability: <%= tool.availability == true ? "Available" : "Unavailable"%></h2>
