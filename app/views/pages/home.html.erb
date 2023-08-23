@@ -1,2 +1,61 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+
+<div class="container mt-5">
+  <h1>Hello <%= @user.first_name %>!</h1>
+
+  <div class="mt-4">
+    <div class="card">
+      <div class="card-header d-inline-flex justify-content-between align-items">
+        <h3>Your Info</h3>
+        <div data-controller="toggle" class="mt-5">
+        <button class="btn btn-outline-primary" data-action="click->toggle#edit">Edit my infos</button>
+          <div data-toggle-target="profileEdit" class="d-none">
+           <%= render "devise/registrations/edit", resource_name: current_user, resource: current_user %>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p><strong>First Name:</strong> <%= @user.first_name %></p>
+        <p><strong>Last Name:</strong> <%= @user.last_name %></p>
+        <p><strong>Address:</strong> <%= @user.address %></p>
+        <p><strong>Password:</strong> <%= @user.password %></p>
+
+    </div>
+  <div class="mt-4">
+    <div class="card">
+      <div class="card-header">
+        <h3>Your Bookings</h3>
+      </div>
+      <div class="card-body">
+        <% @user.bookings.each do |booking| %>
+          <p><strong>Start Date:</strong> <%= booking.start_date.time.strftime("%d.%m.%Y") %></p>
+          <p><strong>End Date:</strong> <%= booking.end_date.time.strftime("%d.%m.%Y") %></p>
+          <p><strong>User:</strong> <%= booking.user.first_name %></p>
+          <p><strong>Tool:</strong> <%= booking.tool.name %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <div class="card">
+      <div class="card-header d-inline-flex justify-content-between align-items">
+        <h3>Your Tools</h3>
+        <div data-controller="toggle" class="mt-5">
+        <button class="btn btn-outline-primary" data-action="click->toggle#fire">Add a New Tool</button>
+        <div data-toggle-target="togglableElement" class="d-none">
+          <%= render "tools/form", tool: @tool %>
+      </div>
+      <div class="card-body">
+      <% @tools.each do |booking| %>
+          <p><strong>Start Date:</strong> <%= booking.start_date.time.strftime("%d.%m.%Y") %></p>
+          <p><strong>End Date:</strong> <%= booking.end_date.time.strftime("%d.%m.%Y") %></p>
+          <p><strong>User:</strong> <%= booking.user.first_name %></p>
+          <p><strong>Tool:</strong> <%= booking.tool.name %></p>
+        <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
