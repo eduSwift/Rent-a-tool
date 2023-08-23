@@ -13,10 +13,13 @@
         <p><strong>Last Name:</strong> <%= @user.last_name %></p>
         <p><strong>Address:</strong> <%= @user.address %></p>
         <p><strong>Password:</strong> <%= @user.password %></p>
-      </div>
+        <div data-controller="toggle" class="mt-5">
+        <button class="btn btn-outline-primary" data-action="click->toggle#edit">Edit my infos</button>
+          <div data-toggle-target="profileEdit" class="d-none">
+           <%= render "devise/registrations/edit", resource_name: current_user, resource: current_user %>
+          </div>
+        </div>
     </div>
-  </div>
-
   <div class="mt-4">
     <div class="card">
       <div class="card-header">
@@ -39,6 +42,7 @@
         <h3>Your Tools</h3>
       </div>
       <div class="card-body">
+        <div data-controller="toggle" class="mt-5">
         <button class="btn btn-outline-primary" data-action="click->toggle#fire">Add a New Tool</button>
         <div data-toggle-target="togglableElement" class="d-none">
           <%= render "tools/form", tool: @tool %>

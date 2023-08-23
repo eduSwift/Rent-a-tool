@@ -2,7 +2,9 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :tool
   validates :start_date, presence: true
-  validates :end_date, presence: true #date: { after_or_equal_to: :start_date}
+
+  validates :end_date, presence: true, comparison: { greater_than: :start_date}
+
   validate :start_date_after_today
   enum status: [ :pending, :rejected, :accepted ]
 

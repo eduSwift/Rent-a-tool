@@ -25,6 +25,7 @@ class ToolsController < ApplicationController
   def index
     @tools = Tool.all
     @tool = Tool.new
+    @booking = Booking.new
   end
 
   def update
