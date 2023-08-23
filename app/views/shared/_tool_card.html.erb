@@ -1,3 +1,21 @@
-<div class="card-category">
-  <%= tool.name %>
+
+<!--
+<div class="card-a">
+  <h1><%= tool.name %> </h1>
+  <% tool_image = ["box.jpg", "chainsaw.jpg", "drill.jpg", "hammer.jpg"].sample %>
+  <%= image_tag("#{tool_image}", resize: "100", size:"200") %>
+</div>
+-->
+
+<div class="card-product">
+  <div class="card-product-infos" >
+    <h2><%= tool.name %></h2>
+    <img src="<%= tool.image %>" alt="">
+    <p><strong><%= tool.description %></strong></p>
+    <h2>Owner: <%= tool.user.first_name %></h2>
+    <h2>Availability: <%= tool.availability == true ? "Available" : "Unavailable"%></h2>
+    <h2>Cost: <%= tool.price %></h2>
+    <h2>Size: <%= tool.size %></h2>
+    <h2>Category: <%= tool.category %></h2>
+  </div>
 </div>
