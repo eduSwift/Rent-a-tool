@@ -1,7 +1,6 @@
 class ToolsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_tool, only: %i[ show edit update destroy ]
-
+  before_action :set_tool, only: %i[show edit update destroy]
 
   def new
   end
@@ -20,7 +19,6 @@ class ToolsController < ApplicationController
     end
   end
 
-
   def show
   end
 
@@ -37,12 +35,15 @@ class ToolsController < ApplicationController
     end
   end
 
+
+
   private
+
   def set_tool
     @tool = Tool.find(params[:id])
   end
+
   def tool_params
     params.require(:tool).permit(:name, :description, :image, :size, :category, :price, :availability)
   end
-
 end
