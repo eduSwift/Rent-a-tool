@@ -1,7 +1,6 @@
 class ToolsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_tool, only: %i[ show edit update destroy ]
-
+  before_action :set_tool, only: %i[show edit update destroy]
 
   def new
   end
@@ -18,12 +17,6 @@ class ToolsController < ApplicationController
         format.json
       end
     end
-  end
-
-  def popup
-    @booking = Booking.find(params[:booking_id])
-    @tool = Tool.find(params[:tool_id])
-    render partial: "bookings/form", locals: {tool: @tool, booking: @booking}, formats: [:html], status: :ok
   end
 
   def show
@@ -43,12 +36,15 @@ class ToolsController < ApplicationController
     end
   end
 
+
+
   private
+
   def set_tool
     @tool = Tool.find(params[:id])
   end
+
   def tool_params
     params.require(:tool).permit(:name, :description, :image, :size, :category, :price, :availability)
   end
-
 end

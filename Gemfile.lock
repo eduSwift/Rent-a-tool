@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/activerecord-hackery/ransack.git
+  revision: e13cf7b503d72e9645ee6ce623e10f3f2fd6ec9d
+  specs:
+    ransack (4.0.0)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
+
+GIT
   remote: https://github.com/heartcombo/simple_form.git
   revision: 921ce9c3fc100e1737125ba1b5a2037c03f2de1b
   specs:
