@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     @user = current_user
     @tools = current_user.tools
     @tool = Tool.new
-    #@bookings = current_user.bookings
-    @tools = current_user.tools
+    @bookings = current_user.bookings
+    @booking = Booking.new
   end
 end
