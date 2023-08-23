@@ -1,8 +1,6 @@
-coucou
-<%= @booking %>
-<%= @tool.name %>
+Book your <%= tool.name %>
 
-<%= simple_form_for([@tool, @booking], data: {
+<%= simple_form_for([tool, @booking], data: {
                               insert_in_list_target: "form",
                               action: "submit->insert-in-list#send" }) do |f| %>
   <%= f.error_notification %>
