@@ -20,6 +20,11 @@ class ToolsController < ApplicationController
     end
   end
 
+  def popup
+    @booking = Booking.find(params[:booking_id])
+    @tool = Tool.find(params[:tool_id])
+    render partial: "bookings/form", locals: {tool: @tool, booking: @booking}, formats: [:html], status: :ok
+  end
 
   def show
   end
@@ -27,6 +32,7 @@ class ToolsController < ApplicationController
   def index
     @tools = Tool.all
     @tool = Tool.new
+    @booking = Booking.new
   end
 
   def update

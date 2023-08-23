@@ -6,7 +6,7 @@
 
 <h3>Your infos</h3>
 <p>First name: <%= @user.first_name %> Last name: <%= @user.last_name %></p>
-<p>Address <%= @user.address %></p>
+<p>Address: <%= @user.address %></p>
 <p>Password: <%= @user.password %></p>
 <div data-controller="toggle" class="mt-5">
   <button class="btn btn-outline-primary" data-action="click->toggle#edit">Edit my infos</button>
@@ -17,10 +17,17 @@
 
 
 <h3>Your bookings</h3>
+<% @user.bookings.each do |booking| %>
+<p><%= booking.start_date %> </p>
+<% end %>
 <h4>bookings of your tool</h4>
 <h4>Your upcoming bookings of other people's tools</h4>
 
 <h3>Your tools</h3>
+<% @user.tools.each do |tool| %>
+<p><%= tool.name %> </p>
+<% end %>
+
 <div data-controller="toggle" class="mt-5">
   <button class="btn btn-outline-primary" data-action="click->toggle#fire">Add a new tool</button>
   <div data-toggle-target="togglableElement" class="d-none">

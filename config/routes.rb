@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "pages/home", to: "pages#home"
   resources :tools do
+    get :popup
     resources :bookings, only: %i[new create show destroy]
   end
 end
