@@ -19,12 +19,12 @@
                           required: false,
                           input_html: { autocomplete: "current-password", class: "form-control", placeholder: "Password" } %>
             </div>
-            <div class="form-group form-check">
-              <%= f.input :remember_me, as: :boolean, label: false, input_html: { class: "form-check-input" } if devise_mapping.rememberable? %>
-              <%= f.label :remember_me, class: "form-check-label" if devise_mapping.rememberable? %> Remember me
-            </div>
             <div class="form-group">
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            </div>
+            <div class="form-group text-center">
               <%= f.button :submit, "Log in", class: 'btn btn-primary btn-block' %>
+             <%= link_to "Don't have an account yet?",   new_user_registration_path, class: "btn btn-primary"%>
             </div>
           <% end %>
         </div>
