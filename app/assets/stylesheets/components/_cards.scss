@@ -5,6 +5,7 @@
 }
 
 .card-trip {
+  border-radius: 5px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -17,6 +18,7 @@
 }
 
 .card-trip h2 {
+  padding: 8px;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -30,10 +32,7 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  padding: 10px;
   position: relative;
 }
 
