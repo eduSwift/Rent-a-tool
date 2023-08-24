@@ -1,13 +1,15 @@
-<%= simple_form_for(:search, method: :get, url: tools_path, html: { class: "search-form" }) do |f| %>
-  <div class="row">
+<div class="d-inline-flex">
+<%= simple_form_for(:search, method: :get, url: tools_path, html: {  }) do |f| %>
+  <div class="row ">
     <div class="col-md-8">
       <%= f.error_notification %>
       <%= f.input_field :search_by_name,
                     class: "form-control search-input",
                     placeholder: "Search by tool name" %>
     </div>
-    <div class="col-md-4">
-      <%= f.button :submit, "Search", class:"md-form mt-0" %>
+    <div class="col-md-4 ml-0">
+      <%= f.button :submit, "Search", class:"md-form mt-0 btn btn-danger btn-block border border-dark rounded-pill" %>
     </div>
   </div>
 <% end %>
+</div>
