@@ -18,7 +18,7 @@
       <% @tools.each do |tool|%>
         <div class="card-trip mt-5" data-controller="toggle">
           <h2><%= tool.name %></h2>
-          <img src="<%= tool.image %>" alt="">
+          <img src="<%= asset_path(tool.image) %>" alt="">
           <button class="btn btn-outline-primary" data-action="click->toggle#tool">More infos</button>
           <div data-toggle-target="toolElement" class="d-none">
             <%= render "shared/tool_card", tool: tool %>
@@ -33,4 +33,3 @@
 
     </div>
 </div>
-

@@ -5,43 +5,11 @@
 
 require 'faker'
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-daniel = User.create!(
-  first_name: 'Daniel',
-  last_name: Name.last_name,
-  address: Address.city,
-  email: 'dani@test.com',
-  password: '123456'
-)
-
 Booking.destroy_all
 User.destroy_all
 Tool.destroy_all
-
-
-10.times do
-  user = User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    address: Faker::Address.city,
-    email: Faker::Internet.email,
-    password: Faker::Internet.password(min_length: 6)
-  )
-
-  10.times do
-    Tool.create!(
-      name: Faker::Appliance.equipment,
-      description: Faker::Lorem.sentence,
-      price: Faker::Commerce.price(range: 10..100),
-      availability: [true, false].sample,
-      category: ['professional', 'beginners'].sample,
-      size: ['small', 'heavy', 'voluminous'].sample,
-      image: Faker::LoremFlickr.image(size: "50x60", search_terms: ['tools']),
-      user:
-    )
-  end
-end
+#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create(name: "Luke", movie: movies.first)
 
 priscila = User.create!(
   first_name: "Priscila",
@@ -51,12 +19,61 @@ priscila = User.create!(
   password: '123456'
 )
 
-Tool.create!(
-  name: Faker::Appliance.equipment,
-  description: Faker::Lorem.sentence,
+daniel = User.create!(
+  first_name: 'Daniel',
+  last_name: Faker::Name.last_name,
+  address: Faker::Address.city,
+  email: 'dani@test.com',
+  password: '234567'
+)
+
+clair = User.create!(
+  first_name: "Clair",
+  last_name: Faker::Name.last_name,
+  address: Faker::Address.city,
+  email: 'clair@test.com',
+  password: '987654'
+)
+
+# 10.times do
+#   user = User.create!(
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     address: Faker::Address.city,
+#     email: Faker::Internet.email,
+#     password: Faker::Internet.password(min_length: 6)
+#   )
+# end
+
+
+Tool.create(
+  name: "Hammer",
+  description: "any hole is a goal",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
-  image: LoremFlickr.image(size: “50x60”, search_terms: [‘tools’]),
+  image: "newtools/hammer.jpg",
+  user: daniel,
+  category: ['professional', 'beginners'].sample,
+  size: ['small', 'heavy', 'voluminous'].sample
+)
+
+Tool.create(
+  name: "Drill",
+  description: "a patrical standard drill",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  image: "newtools/drill.jpeg",
+  user: daniel,
+  category: ['professional', 'beginners'].sample,
+  size: ['small', 'heavy', 'voluminous'].sample
+)
+
+Tool.create(
+  name: "chainsaw",
+  description: "Texas Chainsaw Massacre",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  image: "newtools/chainsaw.jpg.webp",
   user: daniel,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
@@ -73,5 +90,12 @@ Booking.create!(
   start_date: Date.today + 1,
   end_date: Date.today + 2,
   user: User.last,
-  tool: priscila.tools.last
+  tool: daniel.tools.last
+)
+
+Booking.create!(
+  start_date: Date.today + 1,
+  end_date: Date.today + 2,
+  user: clair,
+  tool: Tool.last
 )
