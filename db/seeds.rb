@@ -48,33 +48,66 @@ clair = User.create!(
 
 Tool.create(
   name: "Hammer",
-  description: "any hole is a goal",
+  description: "if I had a Hammer...",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
   image: "newtools/hammer.jpg",
-  user: daniel,
+  user: clair,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
 )
 
 Tool.create(
-  name: "Drill",
-  description: "a patrical standard drill",
+  name: "Standard Drill",
+  description: "any hole is a goal",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
   image: "newtools/drill.jpeg",
-  user: daniel,
+  user: clair,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
 )
 
 Tool.create(
-  name: "chainsaw",
+  name: "Chainsaw",
   description: "Texas Chainsaw Massacre",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
   image: "newtools/chainsaw.jpg.webp",
   user: daniel,
+  category: ['professional', 'beginners'].sample,
+  size: ['small', 'heavy', 'voluminous'].sample
+)
+
+Tool.create(
+  name: "Screwdriver",
+  description: "any one can play with my tool",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  image: "newtools/screwdriver.jpeg",
+  user: daniel,
+  category: ['professional', 'beginners'].sample,
+  size: ['small', 'heavy', 'voluminous'].sample
+)
+
+Tool.create(
+  name: "Pliers",
+  description: "sorry but not for nails",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  image: "newtools/pliers.jpg",
+  user: priscila,
+  category: ['professional', 'beginners'].sample,
+  size: ['small', 'heavy', 'voluminous'].sample
+)
+
+Tool.create(
+  name: "Ladder",
+  description: "Stairway to Heaven",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  image: "newtools/ladder.jpeg",
+  user: priscila,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
 )
