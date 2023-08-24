@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/activerecord-hackery/ransack.git
+  revision: e13cf7b503d72e9645ee6ce623e10f3f2fd6ec9d
+  specs:
+    ransack (4.0.0)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
+
+GIT
   remote: https://github.com/heartcombo/simple_form.git
   revision: 921ce9c3fc100e1737125ba1b5a2037c03f2de1b
   specs:
@@ -114,6 +123,8 @@ GEM
       railties (>= 3.2)
     erubi (1.12.0)
     execjs (2.8.1)
+    faker (3.2.1)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
@@ -197,6 +208,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    redis (4.8.1)
     regexp_parser (2.8.1)
     reline (0.3.8)
       io-console (~> 0.5)
@@ -267,12 +279,15 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  faker
   font-awesome-sass (~> 6.1)
   importmap-rails
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.7)
+  ransack!
+  redis (~> 4.0)
   sassc-rails
   selenium-webdriver
   simple_form!

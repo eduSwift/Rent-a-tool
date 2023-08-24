@@ -1,4 +1,36 @@
-<%# <h1>Tools#index</h1>
-<p>Find me in app/views/tools/index.html.erb</p> %>
 
-<%= render "tools-cards" %>
+<div>
+
+  <% if !user_signed_in? %>
+    <div class="banner" style="background-image: linear-gradient(rgba(206,18,18,0.4),rgba(122,21,21,0.4)), url(<%= asset_path('tool-5.jpg')%>)">
+      <div class="tagline">
+        <%= image_tag('https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Schlaegel_und_Eisen_nach_DIN_21800.svg/800px-Schlaegel_und_Eisen_nach_DIN_21800.svg.png', resize: "100", size:"200") %>
+        <h1 id="header"> Rent a Tool </h1>
+        <p> Your Center specialized in Tool Rental Service for over 20 years in the market </p>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-danger" %>
+        <%= link_to "Sign in", new_user_session_path, class: "btn btn-danger" %>
+      </div>
+    </div>
+  <% end %>
+
+  <h3>Latest tools</h3>
+    <div class="cards mt-5" data-insert-in-list-target="items">
+      <% @tools.each do |tool|%>
+        <div class="card-trip mt-5" data-controller="toggle">
+          <h2><%= tool.name %></h2>
+          <img src="<%= tool.image %>" alt="">
+          <button class="btn btn-outline-primary" data-action="click->toggle#tool">More infos</button>
+          <div data-toggle-target="toolElement" class="d-none">
+            <%= render "shared/tool_card", tool: tool %>
+          </div>
+          <button class="btn btn-outline-primary" data-action="click->toggle#booking">Request a new booking</button>
+          <div data-toggle-target="bookingElement" class="d-none">
+              <%# <%= render "bookings/form", tool: tool, booking: @booking %> %>
+            <%# <%= link_to "Request a booking",  new_tool_booking_path(tool), class: "btn btn-primary" %>
+           </div>
+        </div>
+      <% end %>
+
+    </div>
+</div>
+
