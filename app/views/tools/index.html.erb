@@ -1,10 +1,10 @@
 <div class="container">
   <% if !user_signed_in? %>
-    <div class="banner">
-      <div class="text-center">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('tool-5.jpg')%>)">
+      <div class="tagline">
         <%= image_tag('https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Schlaegel_und_Eisen_nach_DIN_21800.svg/800px-Schlaegel_und_Eisen_nach_DIN_21800.svg.png', resize: "100", size:"200") %>
-        <h3> Rent a Tool </h3>
-        <h4> Your Center specialized in Tool Rental Service for over 20 years in the market </h4>
+        <h1 id="header"> Rent a Tool </h1>
+        <p> Your Center specialized in Tool Rental Service for over 20 years in the market </p>
         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
         <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
       </div>
