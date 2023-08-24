@@ -106,7 +106,7 @@ Tool.create(
   description: "Stairway to Heaven",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
-  image: "newtools/ladder.jpeg",
+  image: "newtools/ladder.jp",
   user: priscila,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
