@@ -28,7 +28,7 @@
   <div class="mt-4">
     <div class="card">
       <div class="card-header d-inline-flex justify-content-between align-items-center">
-        <h3 class="m-0">Your Bookings</h3>
+        <h3 class="m-0" id="booking">Your Bookings</h3>
         <div data-controller="toggle">
         <button class="btn btn-danger btn-block border border-dark rounded-pill" data-action="click->toggle#editBooking">Edit my bookings</button>
           <div data-toggle-target="bookingEdit" class="d-none">
@@ -50,7 +50,7 @@
   <div class="mt-4">
     <div class="card">
       <div class="card-header d-inline-flex justify-content-between align-items-center">
-        <h3 class="m-0">Your Tools</h3>
+        <h3 class="m-0" id="tool">Your Tools</h3>
         <div data-controller="toggle">
           <button class="btn btn-danger btn-block border border-dark rounded-pill" data-action="click->toggle#fire">Add a New Tool</button>
           <div data-toggle-target="togglableElement" class="d-none">
@@ -60,6 +60,7 @@
       </div>
       <div class="card-body">
         <% @user.tools.each do |tool|  %>
+            <%# <img src="<%= asset_path(tool.image) %>"> %>
           <p><strong>Description:</strong> <%= tool.description  %></p>
           <p><strong>Category:</strong> <%= tool.category %></p>
           <p><strong>Size:</strong> <%= tool.size %></p>
