@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   </head>
 
-  <body >
-  <div class="marie">
+
+  <body>
+    <div class="marie">
     <%= render "shared/navbar" if (current_user) %>
     <%= render "shared/flashes" %>
     <%= yield %>
+
   </div>
   </body>
 </html>
