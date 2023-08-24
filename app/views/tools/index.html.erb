@@ -18,15 +18,19 @@
         <div class="card-trip mt-5" data-controller="toggle">
           <h2><%= tool.name %></h2>
           <img src="<%= tool.image %>" alt="">
-          <div class="d-flex justify-content-around">
-            <button class="btn btn-danger btn-block border border-dark rounded-pill" data-action="click->toggle#tool">More infos</button>
-            <div data-toggle-target="toolElement" class="d-none">
-              <%= render "shared/tool_card", tool: tool %>
+          <div class="d-flex align-items-center flex-column my-2">
+            <div class="more-info d-flex align-items-center flex-column">
+              <button class="btn btn-danger btn-block border border-dark rounded-pill" data-action="click->toggle#tool">More infos</button>
+              <div data-toggle-target="toolElement" class="d-none">
+                <%= render "shared/tool_card", tool: tool %>
+              </div>
             </div>
-            <button class="btn btn-danger btn-block border border-dark rounded-pill" data-action="click->toggle#booking">Request a new booking</button>
-            <div data-toggle-target="bookingElement" class="d-none">
-                 <%= render "bookings/form", tool: tool, booking: @booking %>
-              <%# <%= link_to "Request a booking",  new_tool_booking_path(tool), class: "btn btn-primary" %>
+            <div class="form-toggle d-flex align-items-center flex-column my-2">
+              <button class="btn btn-danger btn-block border border-dark rounded-pill" data-action="click->toggle#booking">Request a new booking</button>
+              <div data-toggle-target="bookingElement" class="d-none p-2 ">
+                <%= render "bookings/form", tool: tool, booking: @booking %>
+                <%# <%= link_to "Request a booking",  new_tool_booking_path(tool), class: "btn btn-primary" %>
+              </div>
             </div>
            </div>
         </div>
