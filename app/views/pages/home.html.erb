@@ -1,14 +1,16 @@
 
 
 <div class="container mt-5">
-  <h1>Hello <%= @user.first_name %>!</h1>
-
+  <div class="d-inline-flex justify-content-between align-items">
+    <h1 class="mt-2">Hello <%= @user.first_name %>!</h1>
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/emmvs", style: "border-radius:50%; border-style: groove solid; border-color: black; width:60px; margin-left: 25px;"%>
+  </div>
   <div class="mt-4">
     <div class="card">
-      <div class="card-header d-inline-flex justify-content-between align-items">
-        <h3>Your Info</h3>
-        <div data-controller="toggle" class="mt-5">
-        <button class="btn btn-outline-primary" data-action="click->toggle#edit">Edit my infos</button>
+      <div class="card-header d-inline-flex justify-content-between align-items-center">
+        <h3 class="m-0">Your Info</h3>
+        <div data-controller="toggle">
+        <button class="btn btn-danger btn-block border border-dark rounded-pill" data-action="click->toggle#edit">Edit my infos</button>
           <div data-toggle-target="profileEdit" class="d-none">
            <%= render "devise/registrations/edit", resource_name: current_user, resource: current_user %>
           </div>
@@ -19,14 +21,16 @@
         <p><strong>Last Name:</strong> <%= @user.last_name %></p>
         <p><strong>Address:</strong> <%= @user.address %></p>
         <p><strong>Password:</strong> <%= @user.password %></p>
-
+      </div>
     </div>
+  </div>
+
   <div class="mt-4">
     <div class="card">
-      <div class="card-header d-inline-flex justify-content-between align-items">
-        <h3>Your Bookings</h3>
-        <div data-controller="toggle" class="mt-5">
-        <button class="btn btn-outline-primary" data-action="click->toggle#editBooking">Edit my bookings</button>
+      <div class="card-header d-inline-flex justify-content-between align-items-center">
+        <h3 class="m-0">Your Bookings</h3>
+        <div data-controller="toggle">
+        <button class="btn btn-danger btn-block border border-dark rounded-pill" data-action="click->toggle#editBooking">Edit my bookings</button>
           <div data-toggle-target="bookingEdit" class="d-none">
            <%= render "bookings/editform", booking: @bookings %>
           </div>
@@ -45,25 +49,23 @@
 
   <div class="mt-4">
     <div class="card">
-      <div class="card-header">
-        <h3>Your Tools</h3>
-        <div data-controller="toggle" class="mt-5">
-          <button class="btn btn-outline-primary" data-action="click->toggle#fire">Add a New Tool</button>
+      <div class="card-header d-inline-flex justify-content-between align-items-center">
+        <h3 class="m-0">Your Tools</h3>
+        <div data-controller="toggle">
+          <button class="btn btn-danger btn-block border border-dark rounded-pill" data-action="click->toggle#fire">Add a New Tool</button>
           <div data-toggle-target="togglableElement" class="d-none">
             <%= render "tools/form", tool: @tool %>
           </div>
         </div>
       </div>
       <div class="card-body">
-      <%  @user.tools.each do |tool|  %>
+        <% @user.tools.each do |tool|  %>
           <p><strong>Description:</strong> <%= tool.description  %></p>
           <p><strong>Category:</strong> <%= tool.category %></p>
           <p><strong>Size:</strong> <%= tool.size %></p>
           <p><strong>Price:</strong> <%= tool.price %></p>
           <p><strong>Availability:</strong> <%= tool.availability %></p>
         <% end %>
-
-        </div>
       </div>
     </div>
   </div>
