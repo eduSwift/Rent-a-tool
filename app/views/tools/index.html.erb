@@ -1,6 +1,5 @@
 
-<div>
-
+<div class="container full-viewwidth">
   <% if !user_signed_in? %>
     <div class="banner" style="background-image: linear-gradient(rgba(206,18,18,0.4),rgba(122,21,21,0.4)), url(<%= asset_path('tool-5.jpg')%>)">
       <div class="tagline">
@@ -13,7 +12,7 @@
     </div>
   <% end %>
 
-<h3>Latest tools</h3>
+  <h3 class="mt-5 mb-0">Latest tools</h3>
     <div class="cards mt-5" data-insert-in-list-target="items">
       <% @tools.each do |tool|%>
         <div class="card-trip mt-5" data-controller="toggle">
