@@ -8,30 +8,34 @@
 
 .card-trip:hover {
   color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+  // border: 1px solid #4A4A4A;
   padding: 18px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 0.3;
-  transition: opacity 0.6s ease;
+  opacity: 100;
+  transition: opacity 0.3,2s ease;
   align-items: center;
   font-size: 35%;
-  box-shadow: 10px 20px grey;
+  transition: 0.5s;
+  box-shadow: 10px 20px rgb(190, 188, 188);
 }
+
+
+// .card-d-flex {
+//   padding: 18px;
+//   margin: 50px;
+// }
 
 
 
 
 .card-trip {
-  border-radius: 18px;
+  border-radius: 15px;
   overflow: hidden;
-  //background: white;
+  background:whitesmoke;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-trip:hover {
-
-}
 
 .card-trip > img {
   height: 200px;
@@ -64,6 +68,9 @@
   width: 40px;
 }
 
+.card-trip button {
+  font-size: 14px;
+}
 
 .btn-ghost {
   color: #4A4A4A;
