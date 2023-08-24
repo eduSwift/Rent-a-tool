@@ -78,4 +78,4 @@ group :test do
 end
 gem "devise"
 gem 'faker'
-gem 'ransack', github: 'activerecord-hackery/ransack'
+gem "pg_search"

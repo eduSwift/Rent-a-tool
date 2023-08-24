@@ -12,23 +12,16 @@
     </div>
   <% end %>
 
+
   <h3 class="mt-5 mb-0">Latest tools</h3>
+    <div>
+      <%= render "search" %>
+    </div>
     <div class="cards mt-5" data-insert-in-list-target="items">
       <% @tools.each do |tool|%>
         <div class="card-trip mt-5" data-controller="toggle">
           <h2><%= tool.name %></h2>
-<<<<<<< HEAD
           <img src="<%= asset_path(tool.image) %>" alt="">
-          <button class="btn btn-outline-primary" data-action="click->toggle#tool">More infos</button>
-          <div data-toggle-target="toolElement" class="d-none">
-            <%= render "shared/tool_card", tool: tool %>
-          </div>
-          <button class="btn btn-outline-primary" data-action="click->toggle#booking">Request a new booking</button>
-          <div data-toggle-target="bookingElement" class="d-none">
-              <%# <%= render "bookings/form", tool: tool, booking: @booking %> %>
-            <%# <%= link_to "Request a booking",  new_tool_booking_path(tool), class: "btn btn-primary" %>
-=======
-          <img src="<%= tool.image %>" alt="">
           <div class="d-flex align-items-center flex-column my-2">
             <div class="more-info d-flex align-items-center flex-column">
               <button class="btn btn-danger btn-block border border-dark rounded-pill" data-action="click->toggle#tool">More infos</button>
@@ -43,7 +36,6 @@
                 <%# <%= link_to "Request a booking",  new_tool_booking_path(tool), class: "btn btn-primary" %>
               </div>
             </div>
->>>>>>> ca37cf0559b36e1a6144ecb124c88da551bb7ac5
            </div>
         </div>
       <% end %>

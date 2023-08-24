@@ -23,7 +23,12 @@ class ToolsController < ApplicationController
   end
 
   def index
-    @tools = Tool.all
+    name_search = params.dig(:search, :search_by_name)
+    @tools = if name_search.present?
+               Tool.search_by_name(name_search)
+             else
+               Tool.all
+             end
     @tool = Tool.new
     @booking = Booking.new
   end
