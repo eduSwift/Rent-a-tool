@@ -1,11 +1,48 @@
 .banner {
-  margin: auto;
+  //margin: 0;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  //background: radial-gradient(circle at 10.6% 22.1%, rgb(206, 18, 18) 0%, rgb(122, 21, 21) 100.7%);
 }
-​
+
+.marie {
+  margin: 0 0;
+  background-image: linear-gradient(rgba(206,18,18,1),rgba(122,21,21,1)),
+}
+
 .banner img {
-  width: 100px;
-}
+  //width: 100px;
+  }
 ​
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 15px;
+  color: white;
+  opacity: .7;
+  width: 30%;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
 #flags {
   width: 200px;
+}
+
+.tagline {
+  padding: 20px;
+
+}
+
+.tagline img {
+  margin-top: 5px;
+  margin-left: 25%;
+
 }
