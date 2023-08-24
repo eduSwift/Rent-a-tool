@@ -1,22 +1,23 @@
-<div>Book your <%= tool.name %>
+<div>
+  <p>Book your <%= tool.name %></p>
+  <%= simple_form_for([tool, @booking], data: {
+                      insert_in_list_target: "form",
+                      action: "submit->insert-in-list#send" }) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<%= simple_form_for([tool, @booking], data: {
-                              insert_in_list_target: "form",
-                              action: "submit->insert-in-list#send" }) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-   <div class="form-inputs">
-       <%= f.input :start_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-       <%= f.input :end_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
+    <div class="form-inputs">
+      <%= f.input :start_date,
+      as: :string,
+      input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :end_date,
+      as: :string,
+      input_html: { data: { controller: "datepicker" } } %>
 
 
-<div class="form-actions">
-    <%= f.button :submit, class: "btn btn-primary" %>
- </div>
-<% end %>
+      <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-danger btn-block border border-dark rounded-pill" %>
+      </div>
+    </div>
+  <% end %>
 </div>

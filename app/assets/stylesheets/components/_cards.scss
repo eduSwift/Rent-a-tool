@@ -25,8 +25,12 @@
 .card-trip {
   border-radius: 18px;
   overflow: hidden;
-  background: white;
+  //background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-trip:hover {
+
 }
 
 .card-trip > img {

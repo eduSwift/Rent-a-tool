@@ -14,11 +14,7 @@ export default class extends Controller {
     this.profileEditTarget.classList.toggle("d-none")
 
   }
-  booking(tool){
-    // console.log(this.toolValue);
-    // const url = tool.currentTarget.dataset.toolUrl;
-    // console.log(url);
-    // window.open(url, "", "popup")
+  booking(){
     this.bookingElementTarget.classList.toggle("d-none")
 
   }
