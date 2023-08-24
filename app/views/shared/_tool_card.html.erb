@@ -1,0 +1,32 @@
+
+<!--
+<div class="card-a">
+  <h1><%= tool.name %> </h1>
+  <% tool_image = ["box.jpg", "chainsaw.jpg", "drill.jpg", "hammer.jpg"].sample %>
+  <%= image_tag("#{tool_image}", resize: "100", size:"200") %>
+</div>
+-->
+
+
+<div class="card-trip-infos ">
+  <div class="card-trip-description">
+    <p><strong><%= tool.description %></strong></p>
+  </div>
+  <div class="card-trip-details">
+    <div class="detail">
+      <p><strong>Owner:</strong> <%= tool.user.first_name %></p>
+    </div>
+    <div class="detail">
+      <p><strong>Availability:</strong> <%= tool.availability ? "Available" : "Unavailable" %></p>
+    </div>
+    <div class="detail">
+      <p><strong>Cost:</strong> <%= tool.price %></p>
+    </div>
+    <div class="detail">
+      <p><strong>Size:</strong> <%= tool.size %></p>
+    </div>
+    <div class="detail">
+      <p><strong>Category:</strong> <%= tool.category %></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+
+<%= simple_form_for(tool, data: {
+                              insert_in_list_target: "form",
+                              action: "submit->insert-in-list#send" }) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+   <%= f.input :image, as: :file %>
+      <%= f.input :category, collection: ['professional', 'beginners']%>
+      <%= f.input :size, collection: ['small', 'heavy', 'voluminous']%>
+      <%= f.input :price %>
+      <%= f.input :availability,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>

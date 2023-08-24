@@ -5,3 +5,65 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+Booking.destroy_all
+User.destroy_all
+Tool.destroy_all
+
+
+10.times do
+  user = User.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    address: Faker::Address.city,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password(min_length: 6)
+  )
+
+  10.times do
+    Tool.create!(
+      name: Faker::Appliance.equipment,
+      description: Faker::Lorem.sentence,
+      price: Faker::Commerce.price(range: 10..100),
+      availability: [true, false].sample,
+      category: ['professional', 'beginners'].sample,
+      size: ['small', 'heavy', 'voluminous'].sample,
+      image: Faker::LoremFlickr.image(size: "50x60", search_terms: ['tools']),
+      user:
+    )
+  end
+end
+
+priscila = User.create!(
+  first_name: "Priscila",
+  last_name: Faker::Name.last_name,
+  address: Faker::Address.city,
+  email: "priscila@test.com",
+  password: 123456
+)
+
+Tool.create!(
+  name: Faker::Appliance.equipment,
+  description: Faker::Lorem.sentence,
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  category: ['professional', 'beginners'].sample,
+  size: ['small', 'heavy', 'voluminous'].sample,
+  image: Faker::LoremFlickr.image(size: "50x60", search_terms: ['tools']),
+  user: priscila
+)
+
+Booking.create!(
+  start_date: Date.today + 1,
+  end_date: Date.today + 2,
+  user: priscila,
+  tool: Tool.last
+)
+
+Booking.create!(
+  start_date: Date.today + 1,
+  end_date: Date.today + 2,
+  user: User.last,
+  tool: priscila.tools.last
+)
