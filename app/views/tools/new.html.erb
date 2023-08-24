@@ -1,2 +1,16 @@
-<h1>Tools#new</h1>
-<p>Find me in app/views/tools/new.html.erb</p>
+<%# <h1>Tools#new</h1>
+<p>Find me in app/views/tools/new.html.erb</p> %>
+
+<h1>Log in</h1>
+
+<%= form_with url:sign_up_path do |form| %>
+<div class="mb-3">
+<%= form.label :email %>
+<%= form.text_field :email, class: "form-control", placeholder: "edu@gmail.com" %>
+</div>
+
+<div class="mb-3">
+<%= form.label :password %>
+<%= form.text_field :password, class: "form-control", placeholder: "password" %>
+</div>
+<%= end %>
