@@ -14,6 +14,9 @@
   <% end %>
 
   <h3>Latest tools</h3>
+    <div>
+      <%= render "search" %>
+    </div>
     <div class="cards mt-5" data-insert-in-list-target="items">
       <% @tools.each do |tool|%>
         <div class="card-trip mt-5" data-controller="toggle">
@@ -33,4 +36,3 @@
 
     </div>
 </div>
-

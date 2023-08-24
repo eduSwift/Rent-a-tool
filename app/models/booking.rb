@@ -7,11 +7,12 @@ class Booking < ApplicationRecord
 
   enum status: [ :pending, :rejected, :accepted ]
 
-  private
+  #private
 
   # def  start_date_after_today
   #   if Date.today.strftime("%Y-%m-%d") <= :start_date
   #     errors.add(:start_date, "must be after today")
   #   end
   # end
+
 end
