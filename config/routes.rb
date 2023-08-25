@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "pages/home", to: "pages#home"
+  # get "pages/:id/home", to: "pages#filter"
+
   resources :tools do
-    resources :bookings, only: %i[new create show destroy]
+    resources :bookings, only: %i[new create show destroy edit update]
+
   end
 end

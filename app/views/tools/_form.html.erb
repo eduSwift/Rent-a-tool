@@ -12,9 +12,7 @@
       <%= f.input :category, collection: ['professional', 'beginners']%>
       <%= f.input :size, collection: ['small', 'heavy', 'voluminous']%>
       <%= f.input :price %>
-      <%= f.input :availability,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :availability, collection: ['yes', 'no'] %>
 
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-danger btn-block border border-dark rounded-pill" %>
