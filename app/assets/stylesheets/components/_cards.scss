@@ -15,7 +15,7 @@
   opacity: 100;
   transition: opacity 0.3,2s ease;
   align-items: center;
-  font-size: 35%;
+  font-size: 70%;
   transition: 0.5s;
   box-shadow: 10px 20px rgb(190, 188, 188);
 }
@@ -52,14 +52,20 @@
 
 .card-trip p {
   font-size: 12px;
-  opacity: .7;
+  // opacity: 100%;
   margin: 0;
 }
 
 .card-trip .card-trip-infos {
   padding: 10px;
   position: relative;
+  font-weight: bold;
+  font-size: 10px;
+  text-align: left;
+  width: 180px;
+  color: black;
 }
+
 
 .card-trip-infos .card-trip-user {
   position: absolute;
