@@ -112,6 +112,17 @@ Tool.create(
   size: ['small', 'heavy', 'voluminous'].sample
 )
 
+Tool.create(
+  name: "Drill",
+  description: "not a Transformer",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  image: "drill4.jpg",
+  user: priscila,
+  category: ['professional', 'beginners'].sample,
+  size: ['small', 'heavy', 'voluminous'].sample
+)
+
 Booking.create!(
   start_date: Date.today + 1,
   end_date: Date.today + 2,
