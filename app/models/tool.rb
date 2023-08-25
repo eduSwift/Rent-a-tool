@@ -7,8 +7,8 @@ class Tool < ApplicationRecord
   validates :size, inclusion: {in: SIZE }
   validates :name, :description, :image, :category, :size, presence: true
 
-  pg_search_scope :search_by_name,
-                  against: [:name],
+  pg_search_scope :search_by_name_and_description,
+                  against: [:name, :description],
                   using: {
                     tsearch: { prefix: true }
                   }

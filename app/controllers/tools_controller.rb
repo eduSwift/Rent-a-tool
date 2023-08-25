@@ -23,9 +23,13 @@ class ToolsController < ApplicationController
   end
 
   def index
-    name_search = params.dig(:search, :search_by_name)
+    name_search = params.dig(:search, :search_by_name_and_description)
     @tools = if name_search.present?
-               Tool.search_by_name(name_search)
+              if Tool.search_by_name_and_description(name_search).count.zero?
+                redirect_to tools_path(nothing: "nothing found")
+              else
+                Tool.search_by_name_and_description(name_search)
+              end
              else
                Tool.all
              end
