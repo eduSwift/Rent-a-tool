@@ -62,7 +62,7 @@ Tool.create(
   description: "any hole is a goal",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
-  image: "drill.jpeg",
+  image: "drill.jpg",
   user: clair,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
@@ -84,7 +84,7 @@ Tool.create(
   description: "any one can play with my tool",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
-  image: "screwdriver.jpeg",
+  image: "screwdriver.jpg",
   user: daniel,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
