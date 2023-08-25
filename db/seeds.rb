@@ -57,16 +57,6 @@ Tool.create(
   size: ['small', 'heavy', 'voluminous'].sample
 )
 
-Tool.create(
-  name: "Standard Drill",
-  description: "any hole is a goal",
-  price: Faker::Commerce.price(range: 10..100),
-  availability: [true, false].sample,
-  image: "drill.jpg",
-  user: clair,
-  category: ['professional', 'beginners'].sample,
-  size: ['small', 'heavy', 'voluminous'].sample
-)
 
 Tool.create(
   name: "Chainsaw",
@@ -100,13 +90,89 @@ Tool.create(
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
 )
+Tool.create(
+  name: "Woodsaw",
+  description: "beware of your finger",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  image: "woodsaw.jpeg",
+  user: priscila,
+  category: ['professional', 'beginners'].sample,
+  size: ['small', 'heavy', 'voluminous'].sample
+)
 
 Tool.create(
   name: "Ladder",
   description: "Stairway to Heaven",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
-  image: "pliers.jpg",
+  image: "lader.jpg",
+  user: priscila,
+  category: ['professional', 'beginners'].sample,
+  size: ['small', 'heavy', 'voluminous'].sample
+)
+
+Tool.create(
+  name: "Professional Drill",
+  description: "just try me",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  image: "drill.jpg",
+  user: clair,
+  category: "professional",
+  size: ['small', 'heavy', 'voluminous'].sample
+)
+Tool.create(
+  name: "Cordless Drill",
+  description: "not a Transformer",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  image: "drill5.jpg.webp",
+  user: priscila,
+  category: ['professional', 'beginners'].sample,
+  size: ['small', 'heavy', 'voluminous'].sample
+)
+
+Tool.create(
+  name: "Standard Drill",
+  description: "any hole is a goal",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: "available",
+  image: "standarddrill.jpg",
+  user: clair,
+  category: "beginners",
+  size: "small",
+)
+
+
+Tool.create(
+  name: "Maquita Drill",
+  description: "not Marica",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  image: "maquita.jpg.webp",
+  user: daniel,
+  category: ['professional', 'beginners'].sample,
+  size: ['small', 'heavy', 'voluminous'].sample
+)
+
+Tool.create(
+  name: "Reverse Drill",
+  description: "not a Transformer",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  image: "drill3.jpg",
+  user: priscila,
+  category: ['professional', 'beginners'].sample,
+  size: ['small', 'heavy', 'voluminous'].sample
+)
+
+Tool.create(
+  name: "Drill",
+  description: "not a Transformer",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  image: "drill2.webp",
   user: priscila,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
