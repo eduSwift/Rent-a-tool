@@ -15,6 +15,14 @@
     <div class="mt-4 text-center searchbar">
       <%= render "search" %>
     </div>
+
+    <% if params[:nothing].present? %>
+      <div class="error-container">
+        <div class="message">
+          <%= render "error" %>
+        </div>
+      </div>
+    <% end %>
   <h3 class="mt-5 mb-0 d-flex" style="margin-left: 90px;">Latest tools</h3>
     <div class="cards mt-5" data-insert-in-list-target="items">
       <% @tools.each do |tool|%>
