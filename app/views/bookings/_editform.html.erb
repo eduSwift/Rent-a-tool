@@ -1,1 +1,6 @@
-<h5>Coming soon...</h5>
+
+
+<%= form_tag pages_home_path, method: 'get' do %>
+  <%= select_tag :tool, options_from_collection_for_select(@tools, "id", "name") %>
+  <%= submit_tag 'Filter' %>
+<% end %>
