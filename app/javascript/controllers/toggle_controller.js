@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["togglableElement", "profileEdit", "bookingElement", "toolElement", "bookingEdit"]
   static value = {tool: String}
   connect() {
-    console.log(this.element)
+
   }
   fire() {
     this.togglableElementTarget.classList.toggle("d-none")
