@@ -57,16 +57,16 @@ Tool.create(
   size: ['small', 'heavy', 'voluminous'].sample
 )
 
-# Tool.create(
-#   name: "Standard Drill",
-#   description: "any hole is a goal",
-#   price: Faker::Commerce.price(range: 10..100),
-#   availability: [true, false].sample,
-#   image: "drill.jpeg",
-#   user: clair,
-#   category: ['professional', 'beginners'].sample,
-#   size: ['small', 'heavy', 'voluminous'].sample
-# )
+Tool.create(
+  name: "Standard Drill",
+  description: "any hole is a goal",
+  price: Faker::Commerce.price(range: 10..100),
+  availability: [true, false].sample,
+  image: "drill.jpeg",
+  user: clair,
+  category: ['professional', 'beginners'].sample,
+  size: ['small', 'heavy', 'voluminous'].sample
+)
 
 Tool.create(
   name: "Chainsaw",
