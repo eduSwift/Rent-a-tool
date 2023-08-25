@@ -95,7 +95,7 @@ Tool.create(
   description: "beware of your finger",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
-  image: "woodsaw.jpeg",
+  image: "woodsaw.jpg",
   user: priscila,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
