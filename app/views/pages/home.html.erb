@@ -1,6 +1,6 @@
 
 
-<div class="container mt-5">
+<div class="container mt-5" >
   <div class="d-inline-flex justify-content-between align-items">
     <h1 class="mt-2">Hello <%= @user.first_name %>!</h1>
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/emmvs", style: "border-radius:50%; border-style: groove solid; border-color: black; width:60px; margin-left: 25px;"%>
@@ -28,15 +28,15 @@
   <div class="mt-4">
     <div class="card">
       <div class="card-header d-inline-flex justify-content-between align-items-center">
-        <h3 class="m-0">Your Bookings</h3>
+        <h3 class="m-0" id="booking">Your Bookings</h3>
         <div data-controller="toggle">
         <button class="btn btn-danger btn-block border border-dark rounded-pill" data-action="click->toggle#editBooking">Edit my bookings</button>
           <div data-toggle-target="bookingEdit" class="d-none">
-           <%= render "bookings/editform", booking: @bookings %>
+           <%= render "bookings/editform", user: current_user %>
           </div>
         </div>
       </div>
-      <div class="card-body">
+      <div class="card-body" data-insert-in-list-target="items" id="bookings">
           <% @user.bookings.each do |booking| %>
             <div class="booking-container">
               <%= image_tag "tool-1.jpg", alt: "", class:"priscila"%>
@@ -47,16 +47,20 @@
                 <p ><strong>Tool:</strong> <%= booking.tool.name %></p>
                 <p ><strong>Price:</strong> <%= booking.tool.price %> $</p>
               </div>
-            </div>
+           
+            <% if @tool_id %>
+            <%= render "bookings/edit", select_tool: @select_tool, select_booking: @select_booking %>
+            <% end %>
           <% end %>
+         </div>
       </div>
     </div>
   </div>
 
   <div class="mt-4">
-    <div class="card">
+    <div class="card" >
       <div class="card-header d-inline-flex justify-content-between align-items-center">
-        <h3 class="m-0">Your Tools</h3>
+        <h3 class="m-0" id="tool" data-controller="insert-in-list">Your Tools</h3>
         <div data-controller="toggle">
           <button class="btn btn-danger btn-block border border-dark rounded-pill" data-action="click->toggle#fire">Add a New Tool</button>
           <div data-toggle-target="togglableElement" class="d-none">
@@ -64,8 +68,9 @@
           </div>
         </div>
       </div>
-      <div class="card-body" class= "mb-5">
+      <div class="card-body" class= "mb-5" data-insert-in-list-target="items" id="tools">
         <% @user.tools.each do |tool|  %>
+            <%# <img src="<%= asset_path(tool.image) %>
           <p><strong>Description:</strong> <%= tool.description  %></p>
           <p><strong>Category:</strong> <%= tool.category %></p>
           <p><strong>Size:</strong> <%= tool.size %></p>

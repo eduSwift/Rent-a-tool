@@ -51,7 +51,7 @@ Tool.create(
   description: "if I had a Hammer...",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
-  image: "newtools/hammer.jpg",
+  image: "hammer.jpg",
   user: clair,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
@@ -62,7 +62,7 @@ Tool.create(
   description: "any hole is a goal",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
-  image: "newtools/drill.jpeg",
+  image: "drill.jpg",
   user: clair,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
@@ -73,7 +73,7 @@ Tool.create(
   description: "Texas Chainsaw Massacre",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
-  image: "newtools/chainsaw.jpg.webp",
+  image: "chainsaw.jpg.webp",
   user: daniel,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
@@ -84,7 +84,7 @@ Tool.create(
   description: "any one can play with my tool",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
-  image: "newtools/screwdriver.jpeg",
+  image: "screwdriver.jpg",
   user: daniel,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
@@ -95,7 +95,7 @@ Tool.create(
   description: "sorry but not for nails",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
-  image: "newtools/pliers.jpg",
+  image: "pliers.jpg",
   user: priscila,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
@@ -106,7 +106,7 @@ Tool.create(
   description: "Stairway to Heaven",
   price: Faker::Commerce.price(range: 10..100),
   availability: [true, false].sample,
-  image: "newtools/ladder.jp",
+  image: "pliers.jpg",
   user: priscila,
   category: ['professional', 'beginners'].sample,
   size: ['small', 'heavy', 'voluminous'].sample
